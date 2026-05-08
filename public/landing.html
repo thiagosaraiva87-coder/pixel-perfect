@@ -691,55 +691,6 @@
         const mesNome = meses[new Date().getMonth()];
         document.getElementById('mesAtual').textContent = mesNome;
         document.querySelectorAll('.mes-dinamico').forEach(el => el.textContent = mesNome);
-
-        let current = 0;
-        const slides = document.querySelectorAll('.slide');
-        const total = slides.length;
-        const bar = document.getElementById('progressBar');
-        const counter = document.getElementById('slideCounter');
-
-        function pad(n){ return n < 10 ? '0'+n : n; }
-
-        function updateUI(){
-            const pct = ((current + 1) / total) * 100;
-            bar.style.width = pct + '%';
-            counter.innerHTML = '<span>' + pad(current+1) + '</span> / ' + pad(total);
-        }
-
-        function goTo(index){
-            slides.forEach((s, i) => {
-                s.classList.remove('active','prev');
-                if(i === index) s.classList.add('active');
-                else if(i < index) s.classList.add('prev');
-                // reset animations
-                s.querySelectorAll('.animate-in').forEach(el => {
-                    el.style.animation = 'none';
-                    el.offsetHeight; // reflow
-                    el.style.animation = '';
-                });
-            });
-            updateUI();
-        }
-
-        function nextSlide(){ if(current < total-1){ current++; goTo(current); } }
-        function prevSlide(){ if(current > 0){ current--; goTo(current); } }
-
-        // keyboard
-        document.addEventListener('keydown', e => {
-            if(e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
-            if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
-        });
-
-        // swipe
-        let tx = 0;
-        document.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; });
-        document.addEventListener('touchend', e => {
-            const diff = tx - e.changedTouches[0].screenX;
-            if(diff > 50) nextSlide();
-            if(diff < -50) prevSlide();
-        });
-
-        updateUI();
     </script>
 </body>
 </html>
