@@ -384,7 +384,66 @@
         .case-sep { width: 1px; background: #222; align-self: stretch; }
         .case-desc { font-size: 12px; color: #666; line-height: 1.5; }
 
-        
+        /* ── ABOUT (Quem está por trás) ── */
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            text-align: left;
+        }
+        .about-photo {
+            width: 100%;
+            height: 100%;
+            max-height: 560px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            filter: grayscale(15%);
+        }
+        .about-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(34px, 5vw, 58px);
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 22px;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 16px;
+        }
+        .about-title::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 70px; height: 4px;
+            background: var(--red);
+        }
+        .about-title .red { color: var(--red); }
+        .about-text p {
+            font-size: 15px;
+            color: #bbb;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            font-weight: 300;
+        }
+        .about-close {
+            margin-top: 18px;
+            padding: 16px 20px;
+            background: rgba(224,32,32,0.08);
+            border-left: 3px solid var(--red);
+            border-radius: 4px;
+            font-size: 15px;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        @media (max-width: 800px) {
+            .about-wrap { grid-template-columns: 1fr; gap: 30px; }
+        }
+
         @media (max-width: 600px) {
             .slide { padding: 65px 16px 100px; }
             .grid-3 { grid-template-columns: 1fr 1fr; }
@@ -506,12 +565,12 @@
                 <div class="pain-card">
                     <div class="tag">Erro #1</div>
                     <h3>Pixel sem API</h3>
-                    <p>iOS 14+ quebrou o pixel. Sem Conversions API você está otimizando com dados falhos — e pagando por isso.</p>
+                    <p>iOS 14+ quebrou o pixel. Sem Conversions API você está otimizando com dados falhos e pagando por isso.</p>
                 </div>
                 <div class="pain-card">
                     <div class="tag">Erro #2</div>
                     <h3>Criativo sem estratégia</h3>
-                    <p>Anúncio bonito não vende. Sem gancho, sem dor, sem CTA claro — o algoritmo abandona antes de converter.</p>
+                    <p>Anúncio bonito não vende. Sem gancho, sem dor, sem CTA claro, o algoritmo abandona antes de converter.</p>
                 </div>
                 <div class="pain-card">
                     <div class="tag">Erro #3</div>
@@ -586,7 +645,7 @@
                     <p>Anúncios de desejo para público qualificado e com intenção de compra.</p>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Material Elétrico">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Material Elétrico">
                     <h3>Material Elétrico</h3>
                     <p>Estratégia B2B e varejo com segmentação por perfil de comprador.</p>
                 </div>
@@ -653,7 +712,7 @@
                 <div class="card accent">
                     <i class="fas fa-microscope"></i>
                     <h3>Diagnóstico Gratuito</h3>
-                    <p>Antes de qualquer proposta, analiso sua conta e mostro onde está sangrando — sem compromisso.</p>
+                    <p>Antes de qualquer proposta, analiso sua conta e mostro onde está sangrando, sem compromisso.</p>
                 </div>
                 <div class="card accent">
                     <i class="fas fa-chart-line"></i>
@@ -670,13 +729,13 @@
                 CHEGA DE<br><span class="red">VERBA</span><br>DESPERDIÇADA
             </h1>
             <p class="subtitle animate-in">
-                Diagnóstico gratuito. Sem pitch de venda. Se der pra ajudar, apresento a proposta.
+                Diagnóstico gratuito. Sem pitch de venda. Você sai sabendo exatamente onde está perdendo dinheiro.
             </p>
             <a href="https://wa.me/5522992896877" class="cta-wa animate-in" target="_blank">
                 <i class="fab fa-whatsapp"></i> Quero Meu Diagnóstico Agora
             </a>
             <div class="scarcity animate-in">
-                <i class="fas fa-fire"></i> Apenas 3 vagas abertas em <span class="mes-dinamico"></span> — 1 já reservada
+                <i class="fas fa-fire"></i> Apenas 3 vagas abertas em <span class="mes-dinamico"></span>, 1 já reservada
             </div>
             <p style="margin-top:40px; font-size:10px; color:#333; letter-spacing:3px; text-transform:uppercase;" class="animate-in">
                 Thiago Saraiva · Master Mídia Digital
