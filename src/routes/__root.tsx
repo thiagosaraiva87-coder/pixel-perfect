@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Thiago Saraiva - Gestor de Tráfego" },
+      { name: "description", content: "Pagina Gestor creates a single-page landing page from provided content, showcasing services and results." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Thiago Saraiva - Gestor de Tráfego" },
+      { property: "og:description", content: "Pagina Gestor creates a single-page landing page from provided content, showcasing services and results." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Thiago Saraiva - Gestor de Tráfego" },
+      { name: "twitter:description", content: "Pagina Gestor creates a single-page landing page from provided content, showcasing services and results." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eae58bc6-bc16-48eb-b45c-a4edd6e491e7/id-preview-b1faf281--57c5c4b6-5268-48e8-9540-8ccb6cff60dc.lovable.app-1779390321682.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eae58bc6-bc16-48eb-b45c-a4edd6e491e7/id-preview-b1faf281--57c5c4b6-5268-48e8-9540-8ccb6cff60dc.lovable.app-1779390321682.png" },
     ],
     links: [
       {
