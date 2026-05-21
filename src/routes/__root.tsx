@@ -71,6 +71,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
+              { name: "facebook-domain-verification", content: "zk97iyym5fyk58ghj95g9m1vicpihj" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Thiago Saraiva - Gestor de Tráfego" },
       { name: "description", content: "Pagina Gestor creates a single-page landing page from provided content, showcasing services and results." },
