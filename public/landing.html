@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiago Saraiva - Gestão de Tráfego de Elite</title>
+    <title>Thiago Saraiva | Gestão de Tráfego Pago para Empresas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -72,9 +72,8 @@
 
         .slide {
             width: 100%;
-            min-height: 100vh;
             position: relative;
-            padding: 100px 30px 100px;
+            padding: 56px 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -163,8 +162,8 @@
 
         .subtitle {
             max-width: 620px;
-            color: #999;
-            font-size: clamp(15px, 2.5vw, 18px);
+            color: #aaa;
+            font-size: clamp(16px, 2.5vw, 18px);
             font-weight: 300;
             line-height: 1.6;
             margin-bottom: 25px;
@@ -226,7 +225,7 @@
         .card.accent { border-left: 3px solid var(--red); }
         .card i { font-size: 26px; color: var(--red); margin-bottom: 12px; display: block; }
         .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 7px; }
-        .card p { font-size: 13px; color: #888; line-height: 1.5; }
+        .card p { font-size: 14px; color: #999; line-height: 1.55; }
 
         /* ── PAIN CARDS ── */
         .pain-card {
@@ -341,7 +340,7 @@
             opacity: 0.8;
         }
         .step-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
-        .step-content p { font-size: 13px; color: #777; line-height: 1.4; }
+        .step-content p { font-size: 14px; color: #999; line-height: 1.5; }
 
         /* ── CASE CARDS ── */
         .case-card {
@@ -382,38 +381,88 @@
             margin-top: 2px;
         }
         .case-sep { width: 1px; background: #222; align-self: stretch; }
-        .case-desc { font-size: 12px; color: #666; line-height: 1.5; }
+        .case-desc { font-size: 13.5px; color: #999; line-height: 1.55; }
+        .case-extra { font-size: 13px; color: #999; margin-top: 6px; }
+
+        /* ── RESULTS GRID (6 cards) ── */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 960px;
+        }
+        @media (max-width: 800px) {
+            .results-grid { grid-template-columns: 1fr; }
+        }
+        .results-note {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-top: 18px;
+        }
+
+        /* ── NICHE BADGES (compact, no images) ── */
+        .niche-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 720px;
+        }
+        .niche-badge {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 11px 22px;
+            font-size: 14px;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        /* ── GOOGLE (compact block) ── */
+        .google-block {
+            max-width: 680px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--red);
+            border-radius: 8px;
+            padding: 26px 28px;
+            text-align: left;
+        }
+        .google-block h3 { font-size: 20px; margin-bottom: 10px; }
+        .google-block p { font-size: 14px; color: #999; line-height: 1.6; margin-bottom: 10px; }
 
         /* ── ABOUT (Quem está por trás) ── */
         .about-wrap {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 320px 1fr;
+            gap: 44px;
             align-items: center;
             width: 100%;
-            max-width: 1100px;
+            max-width: 1000px;
             text-align: left;
         }
         .about-photo {
             width: 100%;
-            height: 100%;
-            max-height: 560px;
+            aspect-ratio: 2 / 3;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 15%;
             border-radius: 8px;
             border: 1px solid var(--border);
             filter: grayscale(15%);
         }
         .about-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(34px, 5vw, 58px);
+            font-size: clamp(30px, 4.5vw, 46px);
             color: #fff;
             text-transform: uppercase;
-            line-height: 0.95;
-            margin-bottom: 22px;
+            line-height: 1;
+            margin-bottom: 18px;
             letter-spacing: 1px;
             position: relative;
-            padding-bottom: 16px;
+            padding-bottom: 14px;
         }
         .about-title::after {
             content: '';
@@ -424,7 +473,7 @@
         }
         .about-title .red { color: var(--red); }
         .about-text p {
-            font-size: 15px;
+            font-size: 16px;
             color: #bbb;
             line-height: 1.7;
             margin-bottom: 14px;
@@ -442,15 +491,25 @@
             line-height: 1.5;
         }
         @media (max-width: 800px) {
-            .about-wrap { grid-template-columns: 1fr; gap: 30px; }
+            .about-wrap { grid-template-columns: 1fr; gap: 22px; text-align: center; }
+            .about-text { text-align: left; }
+            .about-photo { max-width: 220px; aspect-ratio: auto; height: 300px; margin: 0 auto; display: block; }
         }
 
         @media (max-width: 600px) {
-            .slide { padding: 65px 16px 100px; }
+            .slide { padding: 36px 16px; }
             .grid-3 { grid-template-columns: 1fr 1fr; }
             .stats-row { gap: 15px; }
             .stat-divider { display: none; }
             h1 { font-size: clamp(48px, 14vw, 72px); }
+            .subtitle { font-size: 16px; }
+            .about-text p { font-size: 16px; }
+            .case-desc { font-size: 16px; color: #aaa; }
+            .case-extra { font-size: 16px; color: #aaa; }
+            .step-content p { font-size: 16px; color: #aaa; }
+            .card p { font-size: 16px; color: #aaa; }
+            .google-block p { font-size: 16px; }
+            .google-block { padding: 20px; }
         }
         @media (max-width: 400px) {
             .grid-3 { grid-template-columns: 1fr; }
@@ -471,9 +530,10 @@
     </script>
     <script>
     document.addEventListener("click", function(event) {
-        if (event.target.closest('a[href*="wa.me"]') || event.target.closest('a[href*="whatsapp.com"]')) {
-            fbq('track', 'Contact');
-        }
+        var link = event.target.closest('a[href*="wa.me"]') || event.target.closest('a[href*="whatsapp.com"]');
+        if (!link) return;
+        var cta = link.getAttribute('data-cta') || 'sem_identificacao';
+        fbq('track', 'Contact', { content_name: cta });
     });
     </script>
     <!-- End Meta Pixel Code -->
@@ -481,56 +541,50 @@
 <body>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1698855357777468&ev=PageView&noscript=1" alt="" /></noscript>
 
-
-    <!-- URGENCY BANNER -->
-    <div class="urgency-banner">
-        <i class="fas fa-fire"></i> Apenas 3 vagas disponíveis para novos clientes em <span id="mesAtual"></span>
-    </div>
-
     <!-- WHATSAPP -->
-    <a href="https://wa.me/5522992896877" class="wa-float" target="_blank">
+    <a href="https://wa.me/5522992896877?text=Ol%C3%A1%2C%20Thiago%21%20Vim%20pelo%20seu%20site%20e%20quero%20entender%20como%20sua%20gest%C3%A3o%20de%20tr%C3%A1fego%20pode%20ajudar%20meu%20neg%C3%B3cio." class="wa-float" target="_blank" aria-label="Conversar no WhatsApp" data-cta="float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <div class="slider" id="slider">
 
         <!-- ① CAPA -->
-        <div class="slide active">
-            <p class="eyebrow animate-in">Thiago Saraiva · Gestor de Tráfego</p>
-            <h1 class="animate-in">
-                SEU ANÚNCIO<br>
-                ESTÁ <span class="red">SANGRANDO</span><br>
-                <span class="outline">DINHEIRO</span>
+        <div class="slide active" style="padding-top:64px; padding-bottom:56px;">
+            <p class="eyebrow animate-in">Thiago Saraiva | Gestão de tráfego pago para empresas</p>
+            <h1 class="animate-in" style="font-size: clamp(34px, 6vw, 56px); line-height: 1.1; max-width: 780px;">
+                Anúncios para atrair mais <span class="red">clientes</span> para o seu negócio.
             </h1>
-            <p class="subtitle animate-in">
-                Enquanto você lê isso, sua verba está sendo desperdiçada.<br>
-                Rastreamento técnico real. Dados. Resultado.
+            <p class="subtitle animate-in" style="margin-top:16px; margin-bottom:20px;">
+                Eu planejo, gerencio e otimizo suas campanhas para gerar oportunidades de venda, com acompanhamento dos resultados e contato direto comigo. Para quem quer começar a anunciar ou melhorar o que já está rodando.
             </p>
-            <a href="https://wa.me/5522992896877" class="cta-main animate-in">Diagnóstico Gratuito Agora</a>
-            <div class="scarcity animate-in">
-                <i class="fas fa-clock"></i> Últimas 3 vagas para <span class="mes-dinamico"></span>
-            </div>
+            <a href="https://wa.me/5522992896877?text=Ol%C3%A1%2C%20Thiago%21%20Vim%20pelo%20seu%20site%20e%20quero%20entender%20como%20sua%20gest%C3%A3o%20de%20tr%C3%A1fego%20pode%20ajudar%20meu%20neg%C3%B3cio." class="cta-wa animate-in" target="_blank" data-cta="hero" style="margin-top:0;">
+                <i class="fab fa-whatsapp"></i> Conversar com Thiago no WhatsApp
+            </a>
+            <p class="animate-in" style="font-size:14px; color:#999; margin-top:12px; max-width:480px;">
+                Conte sobre seu negócio e vamos avaliar o próximo passo, sem compromisso de contratação.
+            </p>
         </div>
 
-        <!-- ② PROVA SOCIAL (CASOS POR NICHO) -->
+        <!-- ② RESULTADOS DE CAMPANHAS -->
         <div class="slide">
             <p class="eyebrow animate-in">Resultados Reais · Não Promessas</p>
-            <h2 class="section-title animate-in">Casos que Provam</h2>
-            <div class="grid grid-2 animate-in" style="max-width:820px;">
+            <h2 class="section-title animate-in">Resultados de campanhas que gerenciei</h2>
+            <div class="results-grid animate-in">
                 <div class="case-card">
-                    <div class="case-nicho">Delivery · Food</div>
+                    <div class="case-nicho">Delivery</div>
                     <div class="case-metrics">
                         <div class="case-metric">
-                            <span class="case-num">ROAS 17</span>
-                            <span class="case-label">retorno sobre o investimento</span>
+                            <span class="case-num">R$18k</span>
+                            <span class="case-label">em vendas</span>
                         </div>
                         <div class="case-sep"></div>
                         <div class="case-metric">
-                            <span class="case-num">R$18k</span>
-                            <span class="case-label">em vendas geradas</span>
+                            <span class="case-num">ROAS 17</span>
+                            <span class="case-label">aproximado</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$1.065 investidos em 2 meses. Custo por pedido de R$5,46.</p>
+                    <p class="case-desc">R$1.065 investidos em anúncios durante dois meses. Cerca de R$17 em vendas para cada R$1 investido em mídia.</p>
+                    <p class="case-extra">Custo por pedido: R$5,46.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Autoescola</div>
@@ -542,10 +596,25 @@
                         <div class="case-sep"></div>
                         <div class="case-metric">
                             <span class="case-num">R$3,41</span>
-                            <span class="case-label">custo por lead</span>
+                            <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$548,90 investidos em 2 meses. 161 leads qualificados para CNH.</p>
+                    <p class="case-desc">R$548,90 investidos em anúncios durante dois meses.</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-nicho">Joalheria</div>
+                    <div class="case-metrics">
+                        <div class="case-metric">
+                            <span class="case-num">139</span>
+                            <span class="case-label">conversas iniciadas por anúncios</span>
+                        </div>
+                        <div class="case-sep"></div>
+                        <div class="case-metric">
+                            <span class="case-num">R$3,53</span>
+                            <span class="case-label">por conversa</span>
+                        </div>
+                    </div>
+                    <p class="case-desc">R$490,43 investidos nas duas campanhas de mensagens em agosto de 2026.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Material Elétrico</div>
@@ -557,10 +626,10 @@
                         <div class="case-sep"></div>
                         <div class="case-metric">
                             <span class="case-num">R$5,43</span>
-                            <span class="case-label">custo por lead</span>
+                            <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$977,61 em 2 meses. Estratégia B2B + varejo com segmentação por perfil.</p>
+                    <p class="case-desc">R$977,61 investidos em anúncios durante dois meses.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Drogaria</div>
@@ -572,248 +641,142 @@
                         <div class="case-sep"></div>
                         <div class="case-metric">
                             <span class="case-num">R$3,03</span>
-                            <span class="case-label">custo por lead</span>
+                            <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$603,91 em 2 meses. 199 contatos gerados com segmentação local precisa.</p>
+                    <p class="case-desc">R$603,91 investidos em anúncios durante dois meses.</p>
+                </div>
+                <div class="case-card">
+                    <div class="case-nicho">Hotelaria · Público Internacional</div>
+                    <div class="case-metrics">
+                        <div class="case-metric">
+                            <span class="case-num">-29%</span>
+                            <span class="case-label">custo por clique no Google Ads</span>
+                        </div>
+                    </div>
+                    <p class="case-desc">Campanhas voltadas ao público europeu para uma pousada no Brasil. O custo médio por clique caiu de R$10,46 para R$7,44 em relação ao período anterior.</p>
+                    <p class="case-extra">Julho–agosto de 2026.</p>
                 </div>
             </div>
-            
+            <p class="results-note animate-in">Resultados de projetos específicos. O desempenho varia conforme o negócio, a oferta, o investimento e o atendimento comercial.</p>
+            <div class="animate-in" style="margin-top:34px;">
+                <p style="font-size:17px; font-weight:600; color:#fff; margin-bottom:6px;">Quer avaliar uma estratégia para o seu negócio?</p>
+                <p class="subtitle" style="margin-bottom:10px;">Converse comigo sobre seus objetivos e o que você já faz para atrair clientes.</p>
+                <a href="https://wa.me/5522992896877?text=Ol%C3%A1%2C%20Thiago%21%20Vim%20pelo%20seu%20site%20e%20quero%20entender%20como%20sua%20gest%C3%A3o%20de%20tr%C3%A1fego%20pode%20ajudar%20meu%20neg%C3%B3cio." class="cta-wa" target="_blank" data-cta="resultados">
+                    <i class="fab fa-whatsapp"></i> Falar sobre meu negócio
+                </a>
+            </div>
         </div>
 
-        <!-- ③ DOR / PROBLEMA -->
+        <!-- ③ APRESENTAÇÃO PESSOAL -->
         <div class="slide">
-            <p class="eyebrow animate-in">Reconhece Isso?</p>
-            <h2 class="section-title animate-in">Por Que Seu Tráfego Não Converte</h2>
-            <div class="grid grid-2 animate-in" style="max-width:820px;">
-                <div class="pain-card">
-                    <div class="tag">Erro #1</div>
-                    <h3>Pixel sem API</h3>
-                    <p>iOS 14+ quebrou o pixel. Sem Conversions API você está otimizando com dados falhos e pagando por isso.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="tag">Erro #2</div>
-                    <h3>Criativo sem estratégia</h3>
-                    <p>Anúncio bonito não vende. Sem gancho, sem dor, sem CTA claro, o algoritmo abandona antes de converter.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="tag">Erro #3</div>
-                    <h3>Escalar no escuro</h3>
-                    <p>Aumentar o orçamento sem rastreamento limpo é jogar dinheiro fora. Você escala o que funciona ou o que drena?</p>
-                </div>
-                <div class="pain-card">
-                    <div class="tag">Erro #4</div>
-                    <h3>Gestor que some</h3>
-                    <p>Relatório genérico de CPM e CPC não paga conta. Resultado real é faturamento, não clique.</p>
+            <div class="about-wrap animate-in">
+                <img src="./thiago.png" alt="Thiago Saraiva" class="about-photo">
+                <div class="about-text">
+                    <p class="eyebrow">Thiago Saraiva · Gestor de Tráfego</p>
+                    <h2 class="about-title">Quem vai cuidar dos seus <span class="red">anúncios</span></h2>
+                    <p>Sou Thiago Saraiva, gestor de tráfego pago. Ajudo negócios a usar anúncios para atrair potenciais clientes e acompanho os resultados para orientar os próximos passos.</p>
+                    <p>Você fala diretamente comigo pelo WhatsApp e recebe acompanhamento do trabalho, com clareza sobre o que está sendo feito e por quê.</p>
                 </div>
             </div>
         </div>
 
         <!-- ④ MÉTODO (PROCESSO) -->
         <div class="slide">
-            <p class="eyebrow animate-in">Como Trabalhamos</p>
-            <h2 class="section-title animate-in">Método de Escala Saudável</h2>
+            <p class="eyebrow animate-in">Como Trabalho</p>
+            <h2 class="section-title animate-in">Como funciona a gestão dos seus anúncios</h2>
+            <p class="subtitle animate-in" style="margin-bottom:36px;">
+                Se os anúncios não estão trazendo o retorno esperado, precisamos entender onde está o gargalo: na campanha, na oferta ou no caminho até a venda.
+            </p>
             <div class="steps animate-in">
                 <div class="step">
                     <div class="step-num">01</div>
                     <div class="step-content">
-                        <h3>Diagnóstico Técnico</h3>
-                        <p>Auditoria completa do pixel, API de Conversões, GTM e GA4. Identificamos cada buraco no funil.</p>
+                        <h3>Entender seu negócio</h3>
+                        <p>Analiso sua oferta, seu público e o caminho até a venda para definir o que suas campanhas precisam alcançar.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">02</div>
                     <div class="step-content">
-                        <h3>Estrutura e Criativo</h3>
-                        <p>Campanha estruturada por etapa do funil. Criativo orientado a dor + prova + CTA direto.</p>
+                        <h3>Planejar e acompanhar as campanhas</h3>
+                        <p>Organizo a estratégia dos anúncios e acompanho o desempenho para identificar o que merece ajuste.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-num">03</div>
                     <div class="step-content">
-                        <h3>Otimização Baseada em Dados</h3>
-                        <p>Escalamos só o que os dados validam. Sem achismo. Decisão por número, não por intuição.</p>
+                        <h3>Melhorar com base nos resultados</h3>
+                        <p>Você acompanha os números, os aprendizados e os próximos passos. As decisões de investimento consideram o desempenho das campanhas e os objetivos do negócio.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ④.5 QUEM ESTÁ POR TRÁS -->
+        <!-- ⑤ ACOMPANHAMENTO E CONTATO -->
         <div class="slide">
-            <div class="about-wrap animate-in">
-                <img src="/thiago.png" alt="Thiago Saraiva" class="about-photo">
-                <div class="about-text">
-                    <p class="eyebrow">Thiago Saraiva · Gestor de Tráfego</p>
-                    <h2 class="about-title">Quem está por trás dos <span class="red">resultados</span></h2>
-                    <p>Não sou agência. Não tenho time de 20 pessoas prometendo milagre.</p>
-                    <p>Sou eu, os seus dados e uma metodologia que já gerou resultado real para negócios locais, e-commerce e prestadores de serviço.</p>
-                    <p>Trabalho com rastreamento técnico real (pixel, API de Conversões, GTM e GA4), porque sem dado confiável, tudo que você faz é chute.</p>
-                    <p>Se o seu anúncio está rodando e o dinheiro está sumindo, o problema não é o produto. É a gestão.</p>
-                    <div class="about-close">
-                        Diagnóstico gratuito. Sem pitch de venda. Você sai sabendo exatamente onde está perdendo dinheiro.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ④.7 GOOGLE MEU NEGÓCIO -->
-        <div class="slide">
-            <p class="eyebrow animate-in">Além do Tráfego Pago</p>
-            <h2 class="section-title animate-in">Google Meu Negócio</h2>
-            <p class="subtitle animate-in" style="margin-bottom:10px;">
-                Quem não aparece no Google Maps não existe para o cliente que está procurando agora.
-            </p>
-            <div class="grid grid-3 animate-in" style="max-width:900px;">
-                <div class="card accent">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Implementação</h3>
-                    <p>Perfil criado do zero com categoria, área de cobertura, fotos e descrição otimizados para o algoritmo do Google.</p>
-                </div>
-                <div class="card accent">
-                    <i class="fas fa-search-location"></i>
-                    <h3>Otimização</h3>
-                    <p>Seu negócio nas primeiras posições do Google Maps para as buscas do seu nicho e região. Sem pagar por clique.</p>
-                </div>
-                <div class="card accent">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Manutenção</h3>
-                    <p>Postagens, respostas a avaliações e monitoramento contínuo. Perfil ativo rankeia melhor.</p>
-                </div>
-            </div>
-            <div class="animate-in" style="margin-top:22px; background:#0d0d0d; border:1px solid #1e1e1e; border-left:3px solid var(--red); border-radius:6px; padding:18px 24px; max-width:680px; text-align:left;">
-                <p style="font-size:15px; line-height:1.7; color:#bbb;">
-                    Tráfego pago traz resultado <strong style="color:#fff;">imediato.</strong><br>
-                    Google Meu Negócio traz resultado <strong style="color:#fff;">todos os dias, sem custo por clique.</strong><br>
-                    <span style="color:var(--red); font-weight:700;">Os dois juntos dominam a região.</span>
-                </p>
-            </div>
-        </div>
-
-        <!-- ⑤ NICHOS -->
-        <div class="slide">
-            <p class="eyebrow animate-in">Experiência Validada</p>
-            <h2 class="section-title animate-in">Nichos que Dominamos</h2>
-            <div class="grid grid-3 animate-in" style="max-width:900px;">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Clínicas">
-                    <h3>Saúde & Clínicas</h3>
-                    <p>Captação de pacientes com autoridade e segmentação local.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Pousadas">
-                    <h3>Pousadas & Hotelaria</h3>
-                    <p>Reservas diretas, fim da dependência do Booking.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Autoescolas">
-                    <h3>Autoescolas</h3>
-                    <p>Captação em volume para CNH com custo por lead controlado.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Delivery">
-                    <h3>Delivery & Food</h3>
-                    <p>Domínio geográfico em horários de pico, sem depender do iFood.</p>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop" class="img-nicho" alt="Joias">
-                    <h3>Joias & Moda</h3>
-                    <p>Anúncios de desejo para público qualificado e com intenção de compra.</p>
-                </div>
-                <div class="card">
-                    <img src="/material-eletrico.png" class="img-nicho" alt="Material Elétrico">
-                    <h3>Material Elétrico</h3>
-                    <p>Estratégia B2B e varejo com segmentação por perfil de comprador.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ⑥ COMPARAÇÃO -->
-        <div class="slide">
-            <p class="eyebrow animate-in">A Diferença na Prática</p>
-            <h2 class="section-title animate-in">Gestor Comum vs. Saraiva</h2>
-            <table class="animate-in">
-                <thead>
-                    <tr>
-                        <th>Pilar</th>
-                        <th>Gestor Comum</th>
-                        <th>Thiago Saraiva</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Rastreamento</td>
-                        <td class="cross">Pixel básico (dados falhos)</td>
-                        <td class="check">✓ API + GTM + GA4 integrados</td>
-                    </tr>
-                    <tr>
-                        <td>Otimização</td>
-                        <td class="cross">Feeling e achismo</td>
-                        <td class="check">✓ Decisão 100% baseada em dados</td>
-                    </tr>
-                    <tr>
-                        <td>Relatório</td>
-                        <td class="cross">CPM e CPC sem contexto</td>
-                        <td class="check">✓ Faturamento, ROAS e CAC reais</td>
-                    </tr>
-                    <tr>
-                        <td>Atendimento</td>
-                        <td class="cross">Some após o onboarding</td>
-                        <td class="check">✓ Comunicação e acesso direto</td>
-                    </tr>
-                    <tr>
-                        <td>Resultado</td>
-                        <td class="cross">Promessa de cliques</td>
-                        <td class="check">✓ Compromisso com faturamento</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- ⑦ OBJEÇÕES / GARANTIA -->
-        <div class="slide">
-            <p class="eyebrow animate-in">Sem Enrolação</p>
-            <h2 class="section-title animate-in">O Que Você Recebe</h2>
+            <p class="eyebrow animate-in">Como Trabalho Com Você</p>
+            <h2 class="section-title animate-in">Como você acompanha o trabalho</h2>
             <div class="grid grid-2 animate-in" style="max-width:760px;">
                 <div class="card accent">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Transparência Total</h3>
-                    <p>Acesso ao gerenciador, relatório semanal com os números que importam: faturamento, ROAS e CAC.</p>
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>Contato direto comigo</h3>
+                    <p>Você fala comigo pelo WhatsApp para acompanhar o trabalho e alinhar os próximos passos.</p>
                 </div>
                 <div class="card accent">
-                    <i class="fas fa-headset"></i>
-                    <h3>Acesso Direto</h3>
-                    <p>Sem SAC, sem intermediário. Você fala comigo direto via WhatsApp.</p>
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Clareza sobre os resultados</h3>
+                    <p>Relatório semanal com os principais resultados das campanhas, explicado de acordo com o objetivo do seu negócio.</p>
                 </div>
                 <div class="card accent">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Diagnóstico Gratuito</h3>
-                    <p>Antes de qualquer proposta, analiso sua conta e mostro onde está sangrando, sem compromisso.</p>
+                    <i class="fas fa-eye"></i>
+                    <h3>Acesso e transparência</h3>
+                    <p>Você mantém acesso ao gerenciador e acompanha o investimento em anúncios.</p>
                 </div>
                 <div class="card accent">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Escala com Controle</h3>
-                    <p>Crescimento saudável: aumentamos verba só quando os dados validam. Sem queimar caixa.</p>
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Decisões com acompanhamento</h3>
+                    <p>As mudanças nas campanhas e no investimento consideram o desempenho e os objetivos definidos.</p>
                 </div>
             </div>
         </div>
 
-        <!-- ⑧ FINAL CTA -->
+        <!-- ⑥ NEGÓCIOS QUE ATENDO -->
+        <div class="slide">
+            <p class="eyebrow animate-in">Experiência Validada</p>
+            <h2 class="section-title animate-in">Negócios que atendo</h2>
+            <div class="niche-badges animate-in">
+                <span class="niche-badge">Saúde e clínicas</span>
+                <span class="niche-badge">Pousadas e hotelaria</span>
+                <span class="niche-badge">Autoescolas</span>
+                <span class="niche-badge">Delivery e alimentação</span>
+                <span class="niche-badge">Joias e moda</span>
+                <span class="niche-badge">Material elétrico</span>
+            </div>
+        </div>
+
+        <!-- ⑦ GOOGLE MEU NEGÓCIO (COMPLEMENTAR) -->
+        <div class="slide">
+            <p class="eyebrow animate-in">Serviço Complementar</p>
+            <h2 class="section-title animate-in" style="font-size: clamp(24px, 5vw, 40px);">Presença no Google para negócios locais</h2>
+            <div class="google-block animate-in">
+                <p>Também trabalho na criação e otimização do perfil da sua empresa no Google, para facilitar que clientes da região encontrem informações e entrem em contato.</p>
+                <p style="margin-bottom:0;">Converse comigo para entender o escopo desse serviço para o seu negócio.</p>
+            </div>
+        </div>
+
+        <!-- ⑧ FECHAMENTO: DIAGNÓSTICO + CHAMADA FINAL -->
         <div class="slide">
             <p class="eyebrow animate-in">Próximo Passo</p>
-            <h1 class="animate-in" style="font-size: clamp(45px,10vw,90px);">
-                CHEGA DE<br><span class="red">VERBA</span><br>DESPERDIÇADA
-            </h1>
+            <h2 class="section-title animate-in" style="font-size: clamp(28px, 5vw, 44px);">Vamos conversar sobre os anúncios da sua empresa?</h2>
             <p class="subtitle animate-in">
-                Diagnóstico gratuito. Sem pitch de venda. Você sai sabendo exatamente onde está perdendo dinheiro.
+                Conte o que você vende, quem quer alcançar e se já anuncia. A conversa começa pelo WhatsApp e a partir dela avaliamos os próximos passos — incluindo um diagnóstico inicial gratuito, sem compromisso de contratação.
             </p>
-            <a href="https://wa.me/5522992896877" class="cta-wa animate-in" target="_blank">
-                <i class="fab fa-whatsapp"></i> Quero Meu Diagnóstico Agora
+            <a href="https://wa.me/5522992896877?text=Ol%C3%A1%2C%20Thiago%21%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20inicial%20gratuito%20para%20meu%20neg%C3%B3cio." class="cta-wa animate-in" target="_blank" data-cta="diagnostico">
+                <i class="fab fa-whatsapp"></i> Solicitar diagnóstico gratuito
             </a>
-            <div class="scarcity animate-in">
-                <i class="fas fa-fire"></i> Apenas 3 vagas abertas em <span class="mes-dinamico"></span>, 1 já reservada
-            </div>
-            <p style="margin-top:40px; font-size:11px; color:#fff; letter-spacing:3px; text-transform:uppercase; font-weight:600;" class="animate-in">
-                Thiago Saraiva · Master Mídia Digital
+            <p class="animate-in" style="font-size:14px; color:#999; margin-top:12px;">
+                Contato direto comigo, sem compromisso de contratação.
             </p>
         </div>
 
@@ -823,15 +786,7 @@
         <a href="https://www.instagram.com/thiago.trafego/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; color:#fff; text-decoration:none; transition:transform .2s, opacity .2s;" onmouseover="this.style.transform='scale(1.1)';this.style.opacity='0.85'" onmouseout="this.style.transform='scale(1)';this.style.opacity='1'">
             <i class="fab fa-instagram" style="font-size:32px;"></i>
         </a>
-        <p style="margin-top:10px; font-size:12px; color:#fff; letter-spacing:2px; text-transform:uppercase; font-weight:500;">Siga no Instagram</p>
+        <p style="margin-top:14px; font-size:11px; color:#777; letter-spacing:2px; text-transform:uppercase; font-weight:500;">Thiago Saraiva | Gestão de tráfego pago</p>
     </footer>
-
-    <script>
-        // Mês dinâmico — atualiza sozinho todo mês
-        const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-        const mesNome = meses[new Date().getMonth()];
-        document.getElementById('mesAtual').textContent = mesNome;
-        document.querySelectorAll('.mes-dinamico').forEach(el => el.textContent = mesNome);
-    </script>
 </body>
 </html>
