@@ -111,21 +111,29 @@
         /* ── WHATSAPP FLOAT ── */
         .wa-float {
             position: fixed;
-            right: 22px; bottom: 22px;
+            right: 18px; bottom: 18px;
             background: #25d366;
-            width: 58px; height: 58px;
+            width: 54px; height: 54px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 26px;
             color: white;
             z-index: 1000;
             text-decoration: none;
             box-shadow: 0 8px 30px rgba(37,211,102,0.35);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
         }
         .wa-float:hover { transform: scale(1.08); box-shadow: 0 12px 40px rgba(37,211,102,0.5); }
+        .wa-float.wa-float--hidden {
+            opacity: 0;
+            transform: scale(0.7);
+            pointer-events: none;
+        }
+        @media (max-width: 480px) {
+            .wa-float { width: 46px; height: 46px; font-size: 21px; right: 14px; bottom: 14px; }
+        }
 
         /* ── TYPOGRAPHY ── */
         .eyebrow {
@@ -341,6 +349,120 @@
         }
         .step-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
         .step-content p { font-size: 14px; color: #999; line-height: 1.5; }
+
+        /* ── MÉTODO ROTA ── */
+        .rota-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(30px, 7vw, 60px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+        .rota-title .red { color: var(--red); }
+        .rota-wrap { width: 100%; max-width: 960px; margin: 10px auto 0; }
+
+        .rota-marker {
+            width: 46px; height: 46px; border-radius: 50%;
+            border: 2px solid var(--red);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--red);
+            background: var(--bg);
+            flex-shrink: 0;
+            position: relative; z-index: 2;
+        }
+        .rota-node-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .rota-node-phrase { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--red); font-weight: 700; margin-bottom: 6px; }
+        .rota-node-desc { font-size: 14px; color: #999; line-height: 1.55; }
+
+        /* Desktop */
+        .rota-desktop { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        .rota-node {
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            max-width: 230px;
+            opacity: 0; transform: translateY(14px);
+            transition: opacity .5s ease, transform .5s ease;
+        }
+        .rota-node.in-view { opacity: 1; transform: none; }
+        .rota-vline { width: 2px; height: 38px; background: var(--border); position: relative; overflow: hidden; }
+        .rota-vline::after { content:''; position:absolute; top:0; left:0; width:100%; height:0%; background:var(--red); transition: height .6s ease; }
+        .rota-vline.in-view::after { height: 100%; }
+        .rota-row { display: flex; align-items: flex-start; justify-content: center; gap: 34px; width: 100%; }
+        .rota-hline { flex: 0 0 auto; width: 54px; height: 2px; background: var(--border); margin-top: 23px; position: relative; overflow: hidden; }
+        .rota-hline::after { content:''; position:absolute; top:0; left:0; height:100%; width:0%; background:var(--red); transition: width .6s ease; }
+        .rota-hline.in-view::after { width: 100%; }
+        .rota-loop-wrap { display: flex; justify-content: center; margin-top: 6px; }
+        .rota-loop { color: var(--red); font-size: 20px; opacity: 0.85; }
+
+        /* Mobile */
+        .rota-mobile { display: none; }
+        @media (max-width: 800px) {
+            .rota-desktop { display: none; }
+            .rota-mobile { display: flex; flex-direction: column; width: 100%; max-width: 480px; margin: 0 auto; }
+            .rota-mnode {
+                display: flex; gap: 18px; align-items: flex-start;
+                opacity: 0; transform: translateY(10px);
+                transition: opacity .5s ease, transform .5s ease;
+            }
+            .rota-mnode.in-view { opacity: 1; transform: none; }
+            .rota-mline-wrap { display: flex; flex-direction: column; align-items: center; }
+            .rota-mline { width: 2px; flex: 1; background: var(--border); position: relative; overflow: hidden; min-height: 30px; }
+            .rota-mline::after { content:''; position:absolute; top:0; left:0; width:100%; height:0%; background:var(--red); transition: height .6s ease; }
+            .rota-mline.in-view::after { height: 100%; }
+            .rota-mcontent { padding-bottom: 26px; text-align: left; }
+            .rota-mcontent .rota-node-title { font-size: 17px; }
+            .rota-mcontent .rota-node-desc { font-size: 16px; color: #aaa; }
+        }
+
+        .rota-flow {
+            margin-top: 34px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(14px, 3vw, 18px);
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            text-align: center;
+        }
+        .rota-flow .red { color: var(--red); }
+        .rota-closing { margin-top: 10px; font-size: 15px; color: #ccc; text-align: center; max-width: 520px; }
+
+        /* ── ACOMPANHAMENTO (COMPACTO) ── */
+        .track-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(26px, 5vw, 42px);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+        .track-wrap {
+            display: flex;
+            width: 100%;
+            max-width: 820px;
+            margin-top: 8px;
+        }
+        .track-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 26px;
+        }
+        .track-item i { color: var(--red); font-size: 20px; margin-bottom: 12px; }
+        .track-item h3 { font-size: 14px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #fff; margin-bottom: 8px; }
+        .track-item p { font-size: 14px; color: #999; line-height: 1.5; }
+        .track-divider { width: 1px; background: var(--border); align-self: stretch; margin: 4px 0; }
+        @media (max-width: 700px) {
+            .track-wrap { flex-direction: column; gap: 26px; }
+            .track-item { padding: 0; }
+            .track-item p { font-size: 16px; color: #aaa; }
+            .track-divider { width: 60%; height: 1px; align-self: center; margin: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .rota-node, .rota-mnode { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .rota-vline::after, .rota-hline::after, .rota-mline::after { transition: none !important; height: 100% !important; width: 100% !important; }
+        }
 
         /* ── CASE CARDS ── */
         .case-card {
@@ -681,62 +803,149 @@
             </div>
         </div>
 
-        <!-- ④ MÉTODO (PROCESSO) -->
+        <!-- ④ MÉTODO ROTA -->
         <div class="slide">
-            <p class="eyebrow animate-in">Como Trabalho</p>
-            <h2 class="section-title animate-in">Como funciona a gestão dos seus anúncios</h2>
+            <p class="eyebrow animate-in">Meu Processo de Gestão</p>
+            <h2 class="rota-title animate-in">MÉTODO <span class="red">ROTA</span></h2>
             <p class="subtitle animate-in" style="margin-bottom:36px;">
-                Se os anúncios não estão trazendo o retorno esperado, precisamos entender onde está o gargalo: na campanha, na oferta ou no caminho até a venda.
+                Tráfego não é colocar uma campanha no ar e esperar. Primeiro definimos o caminho. Depois, os dados mostram onde precisamos ajustar a rota.
             </p>
-            <div class="steps animate-in">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <div class="step-content">
-                        <h3>Entender seu negócio</h3>
-                        <p>Analiso sua oferta, seu público e o caminho até a venda para definir o que suas campanhas precisam alcançar.</p>
+
+            <div class="rota-wrap">
+                <!-- DESKTOP -->
+                <div class="rota-desktop">
+                    <div class="rota-node">
+                        <div class="rota-marker">01</div>
+                        <div class="rota-node-title">Diagnóstico</div>
+                        <div class="rota-node-phrase">Onde estamos</div>
+                        <div class="rota-node-desc">Entendo seu negócio, oferta, público, processo comercial, histórico e os resultados disponíveis.</div>
+                    </div>
+                    <div class="rota-vline"></div>
+                    <div class="rota-row">
+                        <div class="rota-node">
+                            <div class="rota-marker">02</div>
+                            <div class="rota-node-title">Estratégia</div>
+                            <div class="rota-node-phrase">Para onde vamos</div>
+                            <div class="rota-node-desc">Defino o papel do tráfego, os canais, objetivos, públicos, ofertas e como os resultados serão medidos.</div>
+                        </div>
+                        <div class="rota-hline"></div>
+                        <div class="rota-node">
+                            <div class="rota-marker">03</div>
+                            <div class="rota-node-title">Implementação e Testes</div>
+                            <div class="rota-node-phrase">Colocamos em movimento</div>
+                            <div class="rota-node-desc">As campanhas são estruturadas a partir de hipóteses e colocadas à prova com diferentes criativos, públicos e abordagens.</div>
+                        </div>
+                    </div>
+                    <div class="rota-vline"></div>
+                    <div class="rota-row">
+                        <div class="rota-node">
+                            <div class="rota-marker">04</div>
+                            <div class="rota-node-title">Análise</div>
+                            <div class="rota-node-phrase">Medimos o caminho</div>
+                            <div class="rota-node-desc">Acompanho os indicadores relevantes, comparo os resultados e identifico oportunidades e gargalos.</div>
+                        </div>
+                        <div class="rota-hline"></div>
+                        <div class="rota-node">
+                            <div class="rota-marker">05</div>
+                            <div class="rota-node-title">Otimização</div>
+                            <div class="rota-node-phrase">Ajustamos a rota</div>
+                            <div class="rota-node-desc">Os dados orientam as próximas decisões: manter, ajustar, pausar, testar novamente ou escalar.</div>
+                        </div>
+                    </div>
+                    <div class="rota-vline"></div>
+                    <div class="rota-loop-wrap"><i class="fas fa-rotate-right rota-loop"></i></div>
+                </div>
+
+                <!-- MOBILE -->
+                <div class="rota-mobile">
+                    <div class="rota-mnode">
+                        <div class="rota-mline-wrap">
+                            <div class="rota-marker">01</div>
+                            <div class="rota-mline"></div>
+                        </div>
+                        <div class="rota-mcontent">
+                            <div class="rota-node-title">Diagnóstico</div>
+                            <div class="rota-node-phrase">Onde estamos</div>
+                            <div class="rota-node-desc">Entendo seu negócio, oferta, público, processo comercial, histórico e os resultados disponíveis.</div>
+                        </div>
+                    </div>
+                    <div class="rota-mnode">
+                        <div class="rota-mline-wrap">
+                            <div class="rota-marker">02</div>
+                            <div class="rota-mline"></div>
+                        </div>
+                        <div class="rota-mcontent">
+                            <div class="rota-node-title">Estratégia</div>
+                            <div class="rota-node-phrase">Para onde vamos</div>
+                            <div class="rota-node-desc">Defino o papel do tráfego, os canais, objetivos, públicos, ofertas e como os resultados serão medidos.</div>
+                        </div>
+                    </div>
+                    <div class="rota-mnode">
+                        <div class="rota-mline-wrap">
+                            <div class="rota-marker">03</div>
+                            <div class="rota-mline"></div>
+                        </div>
+                        <div class="rota-mcontent">
+                            <div class="rota-node-title">Implementação e Testes</div>
+                            <div class="rota-node-phrase">Colocamos em movimento</div>
+                            <div class="rota-node-desc">As campanhas são estruturadas a partir de hipóteses e colocadas à prova com diferentes criativos, públicos e abordagens.</div>
+                        </div>
+                    </div>
+                    <div class="rota-mnode">
+                        <div class="rota-mline-wrap">
+                            <div class="rota-marker">04</div>
+                            <div class="rota-mline"></div>
+                        </div>
+                        <div class="rota-mcontent">
+                            <div class="rota-node-title">Análise</div>
+                            <div class="rota-node-phrase">Medimos o caminho</div>
+                            <div class="rota-node-desc">Acompanho os indicadores relevantes, comparo os resultados e identifico oportunidades e gargalos.</div>
+                        </div>
+                    </div>
+                    <div class="rota-mnode">
+                        <div class="rota-mline-wrap">
+                            <div class="rota-marker">05</div>
+                            <div class="rota-loop-wrap" style="margin-top:8px;"><i class="fas fa-rotate-right rota-loop"></i></div>
+                        </div>
+                        <div class="rota-mcontent">
+                            <div class="rota-node-title">Otimização</div>
+                            <div class="rota-node-phrase">Ajustamos a rota</div>
+                            <div class="rota-node-desc">Os dados orientam as próximas decisões: manter, ajustar, pausar, testar novamente ou escalar.</div>
+                        </div>
                     </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <div class="step-content">
-                        <h3>Planejar e acompanhar as campanhas</h3>
-                        <p>Organizo a estratégia dos anúncios e acompanho o desempenho para identificar o que merece ajuste.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <div class="step-content">
-                        <h3>Melhorar com base nos resultados</h3>
-                        <p>Você acompanha os números, os aprendizados e os próximos passos. As decisões de investimento consideram o desempenho das campanhas e os objetivos do negócio.</p>
-                    </div>
-                </div>
+
+                <p class="rota-flow animate-in">
+                    ESTRATÉGIA <span class="red">→</span> EXECUÇÃO <span class="red">→</span> ANÁLISE <span class="red">→</span> DECISÃO <span class="red">→</span> EVOLUÇÃO
+                </p>
+                <p class="rota-closing animate-in">A rota é definida. Os dados mostram quando é hora de ajustá-la.</p>
             </div>
         </div>
 
-        <!-- ⑤ ACOMPANHAMENTO E CONTATO -->
+        <!-- ⑤ ACOMPANHAMENTO (COMPACTO) -->
         <div class="slide">
-            <p class="eyebrow animate-in">Como Trabalho Com Você</p>
-            <h2 class="section-title animate-in">Como você acompanha o trabalho</h2>
-            <div class="grid grid-2 animate-in" style="max-width:760px;">
-                <div class="card accent">
+            <p class="eyebrow animate-in">Acompanhamento</p>
+            <h2 class="track-title animate-in">Sem Caixa-Preta</h2>
+            <p class="subtitle animate-in" style="margin-bottom:30px;">
+                Você acompanha o que está acontecendo durante toda a gestão, com contato direto comigo e clareza sobre os resultados.
+            </p>
+            <div class="track-wrap animate-in">
+                <div class="track-item">
                     <i class="fab fa-whatsapp"></i>
                     <h3>Contato direto comigo</h3>
-                    <p>Você fala comigo pelo WhatsApp para acompanhar o trabalho e alinhar os próximos passos.</p>
+                    <p>Alinhamentos e acompanhamento pelo WhatsApp, sem intermediários.</p>
                 </div>
-                <div class="card accent">
+                <div class="track-divider"></div>
+                <div class="track-item">
                     <i class="fas fa-chart-bar"></i>
-                    <h3>Clareza sobre os resultados</h3>
-                    <p>Relatório semanal com os principais resultados das campanhas, explicado de acordo com o objetivo do seu negócio.</p>
+                    <h3>Clareza nos resultados</h3>
+                    <p>Você acompanha os principais números e entende o que está acontecendo nas campanhas.</p>
                 </div>
-                <div class="card accent">
-                    <i class="fas fa-eye"></i>
-                    <h3>Acesso e transparência</h3>
-                    <p>Você mantém acesso ao gerenciador e acompanha o investimento em anúncios.</p>
-                </div>
-                <div class="card accent">
-                    <i class="fas fa-sliders-h"></i>
-                    <h3>Decisões com acompanhamento</h3>
-                    <p>As mudanças nas campanhas e no investimento consideram o desempenho e os objetivos definidos.</p>
+                <div class="track-divider"></div>
+                <div class="track-item">
+                    <i class="fas fa-key"></i>
+                    <h3>Seus ativos continuam seus</h3>
+                    <p>Você mantém acesso às contas, campanhas e ao investimento realizado.</p>
                 </div>
             </div>
         </div>
@@ -788,5 +997,45 @@
         </a>
         <p style="margin-top:14px; font-size:11px; color:#777; letter-spacing:2px; text-transform:uppercase; font-weight:500;">Thiago Saraiva | Gestão de tráfego pago</p>
     </footer>
+
+    <script>
+    // Esconde o botão flutuante do WhatsApp durante a rolagem ativa,
+    // para não cobrir números dos cases ou títulos. Reaparece assim
+    // que a rolagem para.
+    (function () {
+        var floatBtn = document.querySelector('.wa-float');
+        if (!floatBtn) return;
+        var hideTimer = null;
+        window.addEventListener('scroll', function () {
+            floatBtn.classList.add('wa-float--hidden');
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(function () {
+                floatBtn.classList.remove('wa-float--hidden');
+            }, 450);
+        }, { passive: true });
+    })();
+    </script>
+    <script>
+    // Método ROTA — revela a timeline progressivamente ao entrar na viewport.
+    // Respeita prefers-reduced-motion e usa apenas IntersectionObserver nativo.
+    (function () {
+        var rotaEls = document.querySelectorAll('.rota-node, .rota-mnode, .rota-vline, .rota-hline, .rota-mline');
+        if (!rotaEls.length) return;
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+            rotaEls.forEach(function (el) { el.classList.add('in-view'); });
+            return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        rotaEls.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
 </body>
 </html>
