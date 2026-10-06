@@ -505,6 +505,10 @@
         .case-sep { width: 1px; background: #222; align-self: stretch; }
         .case-desc { font-size: 13.5px; color: #999; line-height: 1.55; }
         .case-extra { font-size: 13px; color: #999; margin-top: 6px; }
+        .case-periodo { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #aaa; margin: -4px 0 12px; font-weight: 600; }
+        .case-attr { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; }
+        .case-attr span { font-size: 13px; color: #aaa; line-height: 1.45; }
+        .case-attr strong { color: #fff; font-weight: 700; }
 
         /* ── RESULTS GRID (6 cards) ── */
         .results-grid {
@@ -628,6 +632,8 @@
             .about-text p { font-size: 16px; }
             .case-desc { font-size: 16px; color: #aaa; }
             .case-extra { font-size: 16px; color: #aaa; }
+            .case-attr span { font-size: 16px; }
+            .case-periodo { font-size: 13px; }
             .step-content p { font-size: 16px; color: #aaa; }
             .card p { font-size: 16px; color: #aaa; }
             .google-block p { font-size: 16px; }
@@ -693,23 +699,28 @@
             <h2 class="section-title animate-in">Resultados de campanhas que gerenciei</h2>
             <div class="results-grid animate-in">
                 <div class="case-card">
-                    <div class="case-nicho">Delivery</div>
+                    <div class="case-nicho">Delivery / E-commerce</div>
+                    <p class="case-periodo">Setembro de 2026</p>
                     <div class="case-metrics">
                         <div class="case-metric">
-                            <span class="case-num">R$18k</span>
-                            <span class="case-label">em vendas</span>
+                            <span class="case-num">169</span>
+                            <span class="case-label">compras atribuídas pela plataforma</span>
                         </div>
                         <div class="case-sep"></div>
                         <div class="case-metric">
-                            <span class="case-num">ROAS 17</span>
-                            <span class="case-label">aproximado</span>
+                            <span class="case-num">R$4,72</span>
+                            <span class="case-label">por compra</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$1.065 investidos em anúncios durante dois meses. Cerca de R$17 em vendas para cada R$1 investido em mídia.</p>
-                    <p class="case-extra">Custo por pedido: R$5,46.</p>
+                    <p class="case-desc">R$797,68 investidos em anúncios.</p>
+                    <div class="case-attr">
+                        <span>Valor de conversão atribuído: <strong>R$15.427,00</strong></span>
+                        <span>ROAS: <strong>19,34</strong></span>
+                    </div>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Autoescola</div>
+                    <p class="case-periodo">2 meses</p>
                     <div class="case-metrics">
                         <div class="case-metric">
                             <span class="case-num">161</span>
@@ -721,25 +732,27 @@
                             <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$548,90 investidos em anúncios durante dois meses.</p>
+                    <p class="case-desc">R$548,90 investidos em anúncios.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Joalheria</div>
+                    <p class="case-periodo">Setembro de 2026</p>
                     <div class="case-metrics">
                         <div class="case-metric">
-                            <span class="case-num">139</span>
+                            <span class="case-num">351</span>
                             <span class="case-label">conversas iniciadas por anúncios</span>
                         </div>
                         <div class="case-sep"></div>
                         <div class="case-metric">
-                            <span class="case-num">R$3,53</span>
+                            <span class="case-num">R$1,75</span>
                             <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$490,43 investidos nas duas campanhas de mensagens em agosto de 2026.</p>
+                    <p class="case-desc">R$614,60 investidos em anúncios.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Material Elétrico</div>
+                    <p class="case-periodo">2 meses</p>
                     <div class="case-metrics">
                         <div class="case-metric">
                             <span class="case-num">180</span>
@@ -751,10 +764,11 @@
                             <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$977,61 investidos em anúncios durante dois meses.</p>
+                    <p class="case-desc">R$977,61 investidos em anúncios.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Drogaria</div>
+                    <p class="case-periodo">2 meses</p>
                     <div class="case-metrics">
                         <div class="case-metric">
                             <span class="case-num">199</span>
@@ -766,10 +780,11 @@
                             <span class="case-label">por conversa</span>
                         </div>
                     </div>
-                    <p class="case-desc">R$603,91 investidos em anúncios durante dois meses.</p>
+                    <p class="case-desc">R$603,91 investidos em anúncios.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-nicho">Hotelaria · Público Internacional</div>
+                    <p class="case-periodo">Julho–agosto de 2026</p>
                     <div class="case-metrics">
                         <div class="case-metric">
                             <span class="case-num">-29%</span>
@@ -777,10 +792,9 @@
                         </div>
                     </div>
                     <p class="case-desc">Campanhas voltadas ao público europeu para uma pousada no Brasil. O custo médio por clique caiu de R$10,46 para R$7,44 em relação ao período anterior.</p>
-                    <p class="case-extra">Julho–agosto de 2026.</p>
                 </div>
             </div>
-            <p class="results-note animate-in">Resultados de projetos específicos. O desempenho varia conforme o negócio, a oferta, o investimento e o atendimento comercial.</p>
+            <p class="results-note animate-in">Resultados de projetos específicos. O desempenho varia conforme negócio, oferta, investimento, público, período e processo comercial. Conversas iniciadas não equivalem necessariamente a vendas.</p>
             <div class="animate-in" style="margin-top:34px;">
                 <p style="font-size:17px; font-weight:600; color:#fff; margin-bottom:6px;">Quer avaliar uma estratégia para o seu negócio?</p>
                 <p class="subtitle" style="margin-bottom:10px;">Converse comigo sobre seus objetivos e o que você já faz para atrair clientes.</p>
